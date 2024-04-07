@@ -1,24 +1,24 @@
 #2 B
 -- How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
 ````sql
--- select date(date_trunc('week',registration_date)) + 4 as week_start,
--- count(runner_id)
--- from pizza_runner.runners
--- group by week_start
+select date(date_trunc('week',registration_date)) + 4 as week_start,
+count(runner_id)
+from pizza_runner.runners
+group by week_start
 ````
 
 -- What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?
 
 ````sql
--- select runner_id, avg(arrive_time) from
--- (
--- select *,
--- date_trunc('min',pickup_time::timestamp)-date_trunc('min',order_time) as arrive_time
--- from pizza_runner.customer_orders
--- join pizza_runner.runner_orders using(order_id)
--- where pickup_time<>'null'
--- )as t
--- group by runner_id
+select runner_id, avg(arrive_time) from
+(
+select *,
+date_trunc('min',pickup_time::timestamp)-date_trunc('min',order_time) as arrive_time
+from pizza_runner.customer_orders
+join pizza_runner.runner_orders using(order_id)
+where pickup_time<>'null'
+)as t
+group by runner_id
 ````
 
 Is there any relationship between the number of pizzas and how long the order takes to prepare?
