@@ -45,11 +45,6 @@ This table stores all customer deposits, withdrawals and purchases made using th
 ***
 
 ## Question and Solution
-
-Please join me in executing the queries using PostgreSQL on [DB Fiddle](https://www.db-fiddle.com/f/2GtQz4wZtuNNu7zXH5HtV4/3). It would be great to work together on the questions!
-
-If you have any questions, reach out to me on [LinkedIn](https://www.linkedin.com/in/katiehuangx/).
-
 ## 🏦 A. Customer Nodes Exploration
 
 **1. How many unique nodes are there on the Data Bank system?**
@@ -570,6 +565,4 @@ FROM variance_cte;
 
 - Among the customers, 20.2% transitioned from having a positive balance (`ending_balance`) in the first month to having a negative balance (`following_balance`) in the following month.
 
-***
 
-Do give me a 🌟 if you like what you're reading. Thank you! 🙆🏻‍♀️
